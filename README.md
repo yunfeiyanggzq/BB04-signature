@@ -51,14 +51,13 @@ and  imprt in your code
 #  How to use
 ##   Exmple
  ```
- func main() {
-    	BLS.BLS_start() 
-    	privKey,pubKey:=BLS.Generate_bls_keypair()    
-    	signature :=BLS.Bls_signature([]byte("hello") ,privKey)      
-    	sibyte:=BLS.SetSIGIntoByte(signature)     
-    	sign:=BLS.SetPubKeyFromByte(sibyte)     
-    	BLS.Bls_verify([]byte("hello") ,pubKey,sign)      
-    }
+func  main(){
+	msg:="hello  world"
+	sys:=Sys_Start()
+	_,_,_,_,prikey:=sys.BB04_KenGen()
+	delta,r:=prikey.BB04_Sign(msg)
+	prikey.BB04_Ver(msg,r,delta)
+}
  ```
 ## Function 
 ```
