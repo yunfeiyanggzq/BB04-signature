@@ -28,13 +28,7 @@ type  Sys  struct{
 	g1,g2 *pbc.Element
 	pairing *pbc.Pairing
 }
-func  main(){
-	msg:="hello  world"
-	sys:=Sys_Start()
-	_,_,_,_,reg:=sys.BB04_KenGen()
-	delta,r:=reg.BB04_Sign(msg)
-	reg.BB04_Ver(msg,r,delta)
-}
+
 func  Sys_Start()(*Sys){
 	params:=pbc.GenerateA(160,512)
 	pairing:=params.NewPairing()
