@@ -43,11 +43,11 @@ and  then  install the  golang  pbc  lib
 ## Third: install  the BB04 signature  golang  lib
 download the bb04  signature  lib  
 
-` go  get  go  get  github.com/yunfeiyangbuaa/bls_golang_lib/BLS`
+` go  get  go  get  github.com/yunfeiyangbuaa/BB04-signature`
 
 and  imprt in your code 
 
-`import " github.com/yunfeiyangbuaa/bls_golang_lib/BLS"`
+`import "github.com/yunfeiyangbuaa/BB04-signature"`
 #  How to use
 ##   Exmple
  ```
@@ -61,14 +61,8 @@ func  main(){
  ```
 ## Function 
 ```
-  func BLS_start()                 
-    Generate_bls_keypair()(*pbc.Element,*pbc.Element)　　　　
-    Bls_signature(message  []byte,privkey *pbc.Element) *pbc.Element　　
-    Bls_verify(message  []byte,pubkey  *pbc.Element,signature  *pbc.Element)bool　　
-    func SetPriKeyIntoByte(privkey  *pbc.Element)[]byte    
-    func SetPriKeyFromByte(privkey  []byte)*pbc.Element
-    func SetPubKeyIntoByte(pubkey  *pbc.Element)[]byte
-    func SetPubKeyFromByte(pubkey  []byte)*pbc.Element
-    func SetSIGIntoByte(sig  *pbc.Element)[]byte
-    func SetSIGFromByte(sig  []byte)*pbc.Element
+func (Reg *Reg)BB04_Ver(msg string,r,delta *pbc.Element)bool
+func (Reg *Reg)BB04_Sign(msg string)(*pbc.Element,*pbc.Element)
+func (sys *Sys)BB04_KenGen()(*pbc.Element,*pbc.Element,*pbc.Element,*pbc.Element,*Reg)
+func Sys_Start()(*Sys)
  ```
