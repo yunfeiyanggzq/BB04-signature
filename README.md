@@ -1,5 +1,5 @@
 # Discription
-it  is  a  BB04 signature  lib for  golang 
+it  is  a  BB04 signature  lib in golang 
 # How  to  install  the  lib
 ## First :install  the  GMP
 This package must be compiled using cgo. It also requires the installation of GMP and PBC. During the build process, this package will attempt to include <gmp.h> and <pbc/pbc.h>, and then dynamically link to GMP and PBC.
